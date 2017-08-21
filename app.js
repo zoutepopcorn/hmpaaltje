@@ -185,13 +185,14 @@ var parser2 = parse({
 }, function(err, data) {
   // 5
   data.forEach((out, i) => {
-    const nr = out[5]
+    const nr = out[5];
     wegen.some((weg) => {
       if (weg[0] == nr) {
         //"shapeid","x","y","HECTOMTRNG","AFSTAND","WVK_ID","WVK_BEGDAT"
+        const coor = toLatLng(out[1], out[2])
         const hm = {
-          lat: nr[0],
-          lng: nr[1],
+          lat: coor[0],
+          lng: coor[1],
           hm: out[3],
           aftand: out[4],
           weg: weg[1]
