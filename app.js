@@ -219,3 +219,4 @@ var parser = parse({
 });
 
 fs.createReadStream(__dirname + '/weg.csv').pipe(parser);
+// test
